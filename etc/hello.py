@@ -1,11 +1,5 @@
-name = 'bob'
-num = 12
+import requests # requests 라이브러리 설치 필요
 
-is_number = True
-a_list = []
-a_list.append(1)
-a_list.append([2,3])
-
-a_dict = {}
-a_dict = {'name':'bob', 'age':21}
-a_dict['height'] = 178
+r = requests.get('http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99')
+rjson = r.json()
+print(rjson['RealtimeCityAir']['row'][0]['NO2'])
